@@ -1,5 +1,5 @@
 # Use Rocky Linux as the base image
-FROM rockylinux:latest
+FROM rockylinux:9
 
 # Metadata
 LABEL version="1.0"
