@@ -1,5 +1,5 @@
 # Use official Python slim image
-FROM python:3.9-slim
+FROM python:3.10-slim
 
 # Metadata
 LABEL maintainer="suryatheking5784@gmail.com"
@@ -21,7 +21,7 @@ RUN apt-get update && \
 
 # Install Ansible dependencies
 # Install Ansible using pip (no need to install python3-pip separately, it's already available in python image)
-RUN pip install --no-cache-dir ansible
+RUN pip install --no-cache-dir ansible==2.17.0
 
 # Install specific community.general collection version
 RUN ansible-galaxy collection install community.general:==10.7.0
