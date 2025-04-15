@@ -24,8 +24,7 @@ RUN pip install --no-cache-dir ansible
 WORKDIR /app
 
 # Copy app and playbook
-COPY app.py .
-COPY playbook.yml .
+COPY app.py /app
 
 # Default command
 CMD ["python", "app.py"]
