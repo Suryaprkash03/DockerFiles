@@ -14,17 +14,19 @@ RUN apt-get update && \
         curl \
         sshpass \
         git \
-        python3-pip \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install Ansible via pip
+# Install Ansible using pip (no need to install python3-pip separately, it's already available in python image)
 RUN pip install --no-cache-dir ansible
+
+# Declare a volume for sharing playbooks or scripts
+VOLUME ["/var/lib/ansible_data"]
 
 # Set working directory
 WORKDIR /app
 
-# Copy your application and playbook into the container
+# Copy all files from current dir into the container's /app
 COPY . /app
 
-# Start container with bash so user can run Ansible manually
+# Default command: open a bash shell
 CMD ["/bin/bash"]
