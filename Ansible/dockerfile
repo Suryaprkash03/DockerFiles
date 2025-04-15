@@ -1,0 +1,31 @@
+# Use Python base image
+FROM python:3.9-slim
+
+# Metadata
+LABEL maintainer="suryatheking5784@gmail.com"
+LABEL version="1.0"
+
+# Set environment variable to avoid prompts during package installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install Ansible and other dependencies
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    software-properties-common \
+    curl \
+    gnupg \
+    sshpass \
+    && apt-add-repository --yes --update ppa:ansible/ansible \
+    && apt-get install -y ansible \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+    
+
+# Set working directory
+WORKDIR /app
+
+# Copy Python app and optional Ansible playbook
+COPY app.py /app
+
+
+# Default command (can be changed during container run)
+CMD ["python", "app.py"]
