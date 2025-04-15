@@ -1,0 +1,7 @@
+---
+- name: Sample Playbook
+  hosts: localhost
+  tasks:
+    - name: Print Hello
+      debug:
+        msg: "🛠️ Hello from Ansible inside Docker"
