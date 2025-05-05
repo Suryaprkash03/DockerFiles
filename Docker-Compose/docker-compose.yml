@@ -12,4 +12,6 @@ services:
     container_name: network_topology
     environment:
       - DEBUG=true
+    volumes:
+      - ./architecture_Image:/app/architecture_Image
 
