@@ -148,6 +148,6 @@ def visualize_topology():
     # ax.legend(handles=legend_elements, loc='lower left')
  
     plt.tight_layout()
-    plt.savefig("architecture_Image/network_topology.png", dpi=300)
+    plt.savefig("architecture_Image/Network_Topology01.png", dpi=300)
    # nx.write_graphml(G, "network_topology.graphml")
     plt.show()
