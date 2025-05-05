@@ -1,0 +1,208 @@
+{
+    "devices": {
+        "blrds01s1": {
+            "ip": "10.240.210.11",
+            "role": "Distribution"
+        },
+        "blrds02s1": {
+            "ip": "10.240.210.12",
+            "role": "Distribution"
+        },
+        "blrl2a01s1": {
+            "ip": "10.240.210.15",
+            "role": "L2 Access"
+        },
+        "blrl2a02s1": {
+            "ip": "10.240.210.16",
+            "role": "L2 Access"
+        },
+        "blrl2a03s1": {
+            "ip": "10.240.210.17",
+            "role": "L2 Access"
+        },
+        "blrl2a04s1": {
+            "ip": "10.240.210.18",
+            "role": "L2 Access"
+        },
+        "blrco01s1": {
+            "ip": "10.240.210.19",
+            "role": "Core"
+        }
+    },
+    "links": [
+        [
+            "blrds01s1",
+            "Gi1/0/2",
+            "blrds02s1",
+            "Gi1/0/2"
+        ],
+        [
+            "blrds01s1",
+            "Gi1/0/3",
+            "blrds02s1",
+            "Gi1/0/3"
+        ],
+        [
+            "blrds01s1",
+            "Gi1/0/1",
+            "blrl2a01s1",
+            "Gi1/0/1"
+        ],
+        [
+            "blrds01s1",
+            "Gi1/0/4",
+            "blrl2a02s1",
+            "Gi1/0/4"
+        ],
+        [
+            "blrds01s1",
+            "Gi1/0/6",
+            "blrl2a03s1",
+            "Gi1/0/6"
+        ],
+        [
+            "blrds01s1",
+            "Gi1/0/5",
+            "blrl2a04s1",
+            "Gi1/0/5"
+        ],
+        [
+            "blrds01s1",
+            "Gi1/0/8",
+            "blrco01s1",
+            "Gi1/0/8"
+        ],
+        [
+            "blrds02s1",
+            "Gi1/0/2",
+            "blrds01s1",
+            "Gi1/0/2"
+        ],
+        [
+            "blrds02s1",
+            "Gi1/0/3",
+            "blrds01s1",
+            "Gi1/0/3"
+        ],
+        [
+            "blrds02s1",
+            "Gi1/0/5",
+            "blrl2a01s1",
+            "Gi1/0/5"
+        ],
+        [
+            "blrds02s1",
+            "Gi1/0/6",
+            "blrl2a02s1",
+            "Gi1/0/6"
+        ],
+        [
+            "blrds02s1",
+            "Gi1/0/1",
+            "blrl2a03s1",
+            "Gi1/0/1"
+        ],
+        [
+            "blrds02s1",
+            "Gi1/0/4",
+            "blrl2a04s1",
+            "Gi1/0/4"
+        ],
+        [
+            "blrds02s1",
+            "Gi1/0/7",
+            "blrco01s1",
+            "Gi1/0/8"
+        ],
+        [
+            "blrl2a01s1",
+            "Gi1/0/1",
+            "blrds01s1",
+            "Gi1/0/1"
+        ],
+        [
+            "blrl2a01s1",
+            "Gi1/0/5",
+            "blrds02s1",
+            "Gi1/0/5"
+        ],
+        [
+            "blrl2a01s1",
+            "Gi1/0/6",
+            "blrl2a01s1",
+            "Gi1/0/4"
+        ],
+        [
+            "blrl2a01s1",
+            "Gi1/0/4",
+            "blrl2a01s1",
+            "Gi1/0/6"
+        ],
+        [
+            "blrl2a02s1",
+            "Gi1/0/4",
+            "blrds01s1",
+            "Gi1/0/4"
+        ],
+        [
+            "blrl2a02s1",
+            "Gi1/0/6",
+            "blrds02s1",
+            "Gi1/0/6"
+        ],
+        [
+            "blrl2a03s1",
+            "Gi1/0/6",
+            "blrds01s1",
+            "Gi1/0/6"
+        ],
+        [
+            "blrl2a03s1",
+            "Gi1/0/1",
+            "blrds02s1",
+            "Gi1/0/1"
+        ],
+        [
+            "blrl2a04s1",
+            "Gi1/0/5",
+            "blrds01s1",
+            "Gi1/0/5"
+        ],
+        [
+            "blrl2a04s1",
+            "Gi1/0/4",
+            "blrds02s1",
+            "Gi1/0/4"
+        ],
+        [
+            "blrco01s1",
+            "Gi1/0/8",
+            "blrds01s1",
+            "Gi1/0/8"
+        ],
+        [
+            "blrco01s1",
+            "Gi1/0/8",
+            "blrds02s1",
+            "Gi1/0/7"
+        ]
+    ],
+    "port_channels": {
+        "128": [
+            {
+                "device": "blrds01s1",
+                "interfaces": [
+                    "Gi1/0/2",
+                    "Gi1/0/3"
+                ]
+            },
+            {
+                "device": "blrds02s1",
+                "interfaces": [
+                    "Gi1/0/2",
+                    "Gi1/0/3"
+                ]
+            }
+        ]
+    }
+}

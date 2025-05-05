@@ -1,0 +1,23 @@
+# Use build argument for base image
+ARG BASE_IMAGE=python:3.9
+FROM ${BASE_IMAGE}
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+# Set work directory
+WORKDIR /app
+
+# Copy requirements if you have one
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt
+
+# Copy project files
+COPY . .
+
+# Default command
+CMD ["python", "main.py"]
