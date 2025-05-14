@@ -1,14 +1,23 @@
-version: '3'
+version: '3.8'
 
 services:
   visualizer:
     image: dockersamples/visualizer:stable
     container_name: swarm-visualizer
     ports:
-      - "8090:8080"
+      - "8090:8080"  # Host port 8090 -> Container port 8080
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/var/run/docker.sock:/var/run/docker.sock"  # Access to Docker events
     deploy:
+      mode: replicated
+      replicas: 1
       placement:
         constraints:
-          - node.role == manager
+          - node.role == manager  # Ensures it runs only on manager node
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 256M
+        reservations:
+          cpus: "0.1"
+          memory: 128M
